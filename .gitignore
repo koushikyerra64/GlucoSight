@@ -1,0 +1,58 @@
+# ======================
+# Python Backend
+# ======================
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Logs
+*.log
+
+
+# ======================
+# Environment Variables
+# ======================
+
+.env
+
+
+# ======================
+# Machine Learning
+# ======================
+
+# Dataset cache (optional)
+backend/ml/pima.csv
+
+
+# ======================
+# Node / React Frontend
+# ======================
+
+node_modules/
+frontend/node_modules/
+
+# Build files
+frontend/build/
+frontend/dist/
+
+# React environment files
+frontend/.env
+
+
+# ======================
+# IDE Files
+# ======================
+
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
