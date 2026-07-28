@@ -1,0 +1,95 @@
+{
+  "theme": "light",
+  "archetype": "ORGANIC & EARTHY WITH CLINICAL TWIST",
+  "typography": {
+    "headings": "Outfit, sans-serif",
+    "body": "Figtree, sans-serif",
+    "notes": "Avoid Inter/Roboto for headings. Use Outfit for a modern, geometric yet approachable medical feel. Use tight tracking (tracking-tight) for headings > 32px. Use Figtree for highly legible clinical data tables and body text."
+  },
+  "colors": {
+    "primary": "#0B3B60",
+    "primary_hover": "#174A73",
+    "secondary": "#10B981",
+    "secondary_hover": "#34D399",
+    "background": "#F8FAFC",
+    "surface": "#FFFFFF",
+    "text_primary": "#0F172A",
+    "text_secondary": "#475569",
+    "border": "#E2E8F0",
+    "forbidden": ["#1B93A4", "#7351B7"]
+  },
+  "visual_enhancers": {
+    "cards": "rounded-3xl bg-white shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-slate-100",
+    "glassmorphism": "backdrop-blur-xl bg-white/70 border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)]",
+    "hover_effects": "transition-transform duration-300 hover:-translate-y-1 hover:shadow-lg",
+    "animations": "Use Framer Motion for page transitions, entrance animations, and staggering list items. Static = dead."
+  },
+  "layouts": {
+    "spacing_scale": ["p-6", "p-8", "p-12", "p-16", "p-24"],
+    "dashboard_grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8",
+    "alignment": "Always left-align dense clinical content and forms for better readability. Optical alignment over geometrical."
+  },
+  "components": {
+    "navigation": "Sticky top with Crystal Glass effect (backdrop-blur-xl bg-white/70). Never use fully transparent backgrounds. Include Logo, Links, and Primary CTA.",
+    "buttons": "Pill-shaped (rounded-full). Primary uses deep trust blue text-white. Include subtle hover lift (-translate-y-[2px]) and shadow.",
+    "forms": "Use Shadcn JS components. inputs/selects should be rounded-xl, focus:ring-2 focus:ring-[#0B3B60]/20. DO NOT use generic HTML forms.",
+    "charts": "Shadcn charts (Recharts) with clean tooltips, no grid clutter, and accessible color palettes (Blue and Green variants).",
+    "icons": "lucide-react (default) or @phosphor-icons/react (Duotone weight for premium medical feel)."
+  },
+  "accessibility": {
+    "contrast": "Ensure minimum 4.5:1 contrast for normal text against backgrounds.",
+    "motion": "Respect prefers-reduced-motion CSS media feature.",
+    "testing": "All interactive elements, form inputs, and key data points MUST have data-testid attributes (kebab-case, role-based). e.g., data-testid='predict-submit-button'"
+  },
+  "image_urls": {
+    "hero_consultation": {
+      "url": "https://images.pexels.com/photos/7578797/pexels-photo-7578797.jpeg",
+      "description": "Female doctor discussing health chart with patient during consultation."
+    },
+    "glucose_monitoring": {
+      "url": "https://images.pexels.com/photos/16984203/pexels-photo-16984203.jpeg",
+      "description": "Close-up of checking blood glucose level with a meter."
+    },
+    "healthy_diet": {
+      "url": "https://images.pexels.com/photos/12765459/pexels-photo-12765459.jpeg",
+      "description": "Vibrant assortment of fresh vegetables."
+    },
+    "exercise_fitness": {
+      "url": "https://images.pexels.com/photos/8497646/pexels-photo-8497646.jpeg",
+      "description": "Couple jogging outdoors promoting active lifestyle."
+    },
+    "medical_laboratory": {
+      "url": "https://images.pexels.com/photos/3735705/pexels-photo-3735705.jpeg",
+      "description": "Scientist analyzing a blood sample in a laboratory setting."
+    },
+    "health_technology": {
+      "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71",
+      "description": "Graphs of performance analytics on a laptop screen for dashboard inspiration."
+    },
+    "diabetes_awareness": {
+      "url": "https://images.pexels.com/photos/6823566/pexels-photo-6823566.jpeg",
+      "description": "Hand with a blue circle drawn on the palm symbolizing diabetes awareness."
+    }
+  },
+  "instructions_to_main_agent": [
+    "Use JavaScript (.js/jsx) for React components, DO NOT use TypeScript (.tsx).",
+    "Do not center-align the app container (.App { text-align: center; } is banned). Left-align for natural reading flow.",
+    "Do not use generic transitions like 'transition: all'. Explicitly animate transform/opacity.",
+    "Prediction Form Requirements: 7 inputs only (Glucose Level, Blood Pressure, Skin Thickness, Insulin, BMI, Diabetes Pedigree Function, Age). EXCLUDE 'Pregnancies'.",
+    "For the Admin Dashboard & Model Performance pages, use Recharts for visual metrics (ROC, Confusion Matrix, KPIs, Pie, Bar charts).",
+    "Include 'data-testid' on every form input, submit button, and primary nav link to ensure robust testing.",
+    "Ensure generous spacing (p-8 to p-12) within medical cards to prevent a cluttered 'AI slop' look.",
+    "Use sonner for all toast notifications (success/error states for predictions and contact form)."
+  ],
+  "universal_guidelines_for_main_agent": [
+    "You tend to converge toward generic, 'on distribution' outputs. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy and glass-morphism effects.",
+    "NEVER use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations separate good from extraordinary.",
+    "Main agent relies on provided image URLs. NEVER use placeholder text or dummy image URLs."
+  ]
+}
