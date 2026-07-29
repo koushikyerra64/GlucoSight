@@ -29,60 +29,45 @@ body {
     color: var(--text);
 }
 
-h1, h2, h3, h4, h5, h6, .font-heading {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
     font-family: 'Outfit', sans-serif;
     letter-spacing: -0.02em;
 }
 
-@layer base {
-    :root {
-        --background: 210 40% 98%;
-        --foreground: 222 47% 11%;
-        --card: 0 0% 100%;
-        --card-foreground: 222 47% 11%;
-        --popover: 0 0% 100%;
-        --popover-foreground: 222 47% 11%;
-        --primary: 209 80% 21%;
-        --primary-foreground: 0 0% 100%;
-        --secondary: 160 84% 39%;
-        --secondary-foreground: 0 0% 100%;
-        --muted: 210 40% 96%;
-        --muted-foreground: 215 16% 47%;
-        --accent: 160 84% 39%;
-        --accent-foreground: 0 0% 100%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 214 32% 91%;
-        --input: 214 32% 91%;
-        --ring: 209 80% 21%;
-        --radius: 0.75rem;
-        --chart-1: 209 80% 21%;
-        --chart-2: 160 84% 39%;
-        --chart-3: 197 71% 52%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 0 72% 51%;
-    }
-}
-
-@layer base {
-    * {
-        @apply border-border;
-    }
-    body {
-        @apply bg-background text-foreground;
-    }
+* {
+    box-sizing: border-box;
 }
 
 /* Distinct scrollbar */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #F1F5F9; }
-::-webkit-scrollbar-thumb { background: #CBD5E1; border-radius: 999px; }
-::-webkit-scrollbar-thumb:hover { background: #94A3B8; }
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
 
-/* Grain overlay for hero surfaces */
+::-webkit-scrollbar-track {
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94A3B8;
+}
+
+/* Grain overlay */
 .grain {
     position: relative;
 }
+
 .grain::after {
     content: "";
     position: absolute;
@@ -96,113 +81,121 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 .glass {
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.72);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px rgba(15, 23, 42, 0.05);
+    background: rgba(255,255,255,.72);
+    border: 1px solid rgba(255,255,255,.5);
+    box-shadow: 0 8px 32px rgba(15,23,42,.05);
 }
 
 .med-card {
     border-radius: 24px;
     background: #fff;
     border: 1px solid #EEF2F6;
-    box-shadow: 0 4px 24px rgba(11, 59, 96, 0.04);
-    transition: transform 300ms ease, box-shadow 300ms ease;
+    box-shadow: 0 4px 24px rgba(11,59,96,.04);
+    transition: .3s;
 }
+
 .med-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 18px 40px rgba(11, 59, 96, 0.10);
+    box-shadow: 0 18px 40px rgba(11,59,96,.10);
 }
 
 .btn-primary {
     background: #0B3B60;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
+    color: white;
+    padding: .75rem 1.5rem;
     border-radius: 9999px;
     font-weight: 600;
-    transition: transform 200ms ease, background-color 200ms ease, box-shadow 200ms ease;
-    box-shadow: 0 6px 20px rgba(11, 59, 96, 0.15);
+    transition: .2s;
+    box-shadow: 0 6px 20px rgba(11,59,96,.15);
 }
+
 .btn-primary:hover {
     background: #174A73;
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(11, 59, 96, 0.25);
 }
+
 .btn-secondary {
     background: #10B981;
-    color: #fff;
-    padding: 0.75rem 1.5rem;
+    color: white;
+    padding: .75rem 1.5rem;
     border-radius: 9999px;
     font-weight: 600;
-    transition: transform 200ms ease, background-color 200ms ease;
+    transition: .2s;
 }
+
 .btn-secondary:hover {
     background: #059669;
     transform: translateY(-2px);
 }
+
 .btn-ghost {
     background: transparent;
     color: #0B3B60;
-    padding: 0.75rem 1.5rem;
+    padding: .75rem 1.5rem;
     border-radius: 9999px;
     border: 1px solid #CBD5E1;
     font-weight: 600;
-    transition: background-color 200ms ease, border-color 200ms ease;
 }
+
 .btn-ghost:hover {
     background: #EFF6FB;
-    border-color: #0B3B60;
 }
 
 .chip {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.35rem 0.85rem;
+    gap: .4rem;
+    padding: .35rem .85rem;
     border-radius: 9999px;
-    font-size: 0.8rem;
+    font-size: .8rem;
     font-weight: 500;
-    background: rgba(16, 185, 129, 0.10);
+    background: rgba(16,185,129,.1);
     color: #047857;
-    border: 1px solid rgba(16, 185, 129, 0.25);
+    border: 1px solid rgba(16,185,129,.25);
 }
+
 .chip-blue {
-    background: rgba(11, 59, 96, 0.08);
+    background: rgba(11,59,96,.08);
     color: #0B3B60;
-    border: 1px solid rgba(11, 59, 96, 0.15);
+    border: 1px solid rgba(11,59,96,.15);
 }
 
 .section-title {
     font-family: 'Outfit', sans-serif;
+    font-size: clamp(2rem,3.5vw,3rem);
     font-weight: 700;
-    font-size: clamp(2rem, 3.5vw, 3rem);
-    letter-spacing: -0.03em;
     color: #0F172A;
+    letter-spacing: -.03em;
 }
 
 .field-label {
-    font-size: 0.8rem;
+    font-size: .8rem;
     font-weight: 600;
     color: #475569;
-    letter-spacing: 0.02em;
     text-transform: uppercase;
+    letter-spacing: .02em;
 }
 
-/* Pulse dot */
 .pulse-dot {
-    position: relative;
     width: 8px;
     height: 8px;
     border-radius: 999px;
     background: #10B981;
+    position: relative;
 }
+
 .pulse-dot::after {
     content: "";
     position: absolute;
     inset: -4px;
     border-radius: 999px;
-    background: rgba(16, 185, 129, 0.35);
-    animation: ping 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+    background: rgba(16,185,129,.35);
+    animation: ping 1.8s cubic-bezier(0,0,.2,1) infinite;
 }
+
 @keyframes ping {
-    75%, 100% { transform: scale(2); opacity: 0; }
+    75%,100% {
+        transform: scale(2);
+        opacity: 0;
+    }
 }
